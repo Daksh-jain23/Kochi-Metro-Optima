@@ -1,0 +1,131 @@
+{
+  "system_name": "Kochi Metro Rolling Stock Maintenance Priority Forecasting",
+  "version": "1.0.0",
+  "release_date": "2026-10-24",
+  "fleet_size": 25,
+  "horizons": {
+    "t3": {
+      "horizon_days": 3,
+      "purpose": "Daily operational dispatching & immediate depot inspection bay scheduling",
+      "best_overall_model": {
+        "name": "Ensemble: XGBoost + LightGBM (SLSQP)",
+        "file": "models/t3/ensemble_slsqp_xgb_lgbm_t3.joblib",
+        "type": "convex_ensemble",
+        "weights": {
+          "XGBoost": 0.5,
+          "LightGBM": 0.5
+        },
+        "performance_2025_test": {
+          "spearman_rho": 0.8633,
+          "kendall_tau": 0.7228,
+          "mae": 0.02585,
+          "rmse": 0.03976,
+          "r2": 0.6526,
+          "mean_rank_error": 2.55,
+          "ndcg5_pct": 93.81
+        },
+        "performance_2026_unseen": {
+          "spearman_rho": 0.8034,
+          "kendall_tau": 0.6641,
+          "mae": 0.02798,
+          "r2": 0.6090,
+          "mean_rank_error": 2.88,
+          "ndcg5_pct": 92.76
+        }
+      },
+      "best_standalone_model": {
+        "name": "LightGBM Regressor",
+        "file": "models/t3/lightgbm_t3.joblib",
+        "performance_2025_test": {
+          "spearman_rho": 0.8632,
+          "kendall_tau": 0.7214,
+          "mae": 0.02563,
+          "r2": 0.6575
+        }
+      }
+    },
+    "t7": {
+      "horizon_days": 7,
+      "purpose": "Weekly overhaul bay planning, wheel reprofiling & component procurement",
+      "best_overall_model": {
+        "name": "Ensemble: XGBoost + LightGBM (SLSQP)",
+        "file": "models/t7/ensemble_slsqp_xgb_lgbm_t7.joblib",
+        "type": "convex_ensemble",
+        "weights": {
+          "XGBoost": 0.5,
+          "LightGBM": 0.5
+        },
+        "performance_2025_test": {
+          "spearman_rho": 0.7662,
+          "kendall_tau": 0.6165,
+          "mae": 0.03376,
+          "rmse": 0.04883,
+          "r2": 0.4952,
+          "mean_rank_error": 3.46,
+          "ndcg5_pct": 91.57
+        },
+        "performance_2026_unseen": {
+          "spearman_rho": 0.7161,
+          "kendall_tau": 0.5668,
+          "mae": 0.03534,
+          "r2": 0.4455,
+          "mean_rank_error": 3.68,
+          "ndcg5_pct": 89.09
+        }
+      },
+      "best_standalone_model": {
+        "name": "XGBoost Regressor",
+        "file": "models/t7/xgboost_t7.joblib",
+        "performance_2025_test": {
+          "spearman_rho": 0.7695,
+          "kendall_tau": 0.6169,
+          "mae": 0.03343,
+          "r2": 0.5005
+        },
+        "performance_2026_unseen": {
+          "spearman_rho": 0.7176,
+          "kendall_tau": 0.5679,
+          "mae": 0.03523,
+          "r2": 0.4492
+        }
+      }
+    }
+  },
+  "feature_schema": {
+    "feature_count": 24,
+    "feature_names": [
+      "days_remaining",
+      "critical_jobs",
+      "non_critical_jobs",
+      "revenue",
+      "remaining_hours",
+      "penalty",
+      "total_km",
+      "daily_avg_run",
+      "variance",
+      "mileage",
+      "train_age_years",
+      "daily_trips",
+      "days_since_last_maintenance",
+      "maintenance_priority_score",
+      "rolling_7d_critical_jobs",
+      "rolling_7d_non_critical_jobs",
+      "rolling_7d_daily_avg_run",
+      "rolling_7d_revenue",
+      "rolling_7d_penalty",
+      "delta_7d_critical_jobs",
+      "delta_7d_days_remaining",
+      "delta_7d_total_km",
+      "delta_7d_priority_score",
+      "delta_7d_days_since_maint"
+    ]
+  },
+  "decision_thresholds": {
+    "critical_depot_rank_cutoff": 3,
+    "inspection_bay_rank_cutoff": 5,
+    "active_service_label": "ACTIVE SERVICE",
+    "inspection_bay_label": "INSPECTION: Bay",
+    "critical_depot_label": "CRITICAL: Depot"
+  }
+}
+

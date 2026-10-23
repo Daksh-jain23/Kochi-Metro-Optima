@@ -181,7 +181,7 @@ Every model receives **24 features** per train:
   `critical_jobs`, `non_critical_jobs`, `total_km`, `daily_avg_run`, `variance`, `mileage`, `train_age_years`, `daily_trips`, `days_since_last_maintenance`, `revenue`, `remaining_hours`, `penalty`, `days_remaining`, `maintenance_priority_score`.
 * **5 Rolling Window Historical Features (Past $K=7$ Days):**
   Averaged across window $[t-6, t]$ to filter high-frequency operational noise:
-  $$\text{rolling\_7d}_{i}(t) = \frac{1}{K} \sum_{j=0}^{K-1} x_i(t - j) \quad (K = 7)$$
+  $$\text{Rolling 7d Mean}_{i}(t) = \frac{1}{K} \sum_{j=0}^{K-1} x_i(t - j) \quad (K = 7)$$
   Applied to: `critical_jobs`, `non_critical_jobs`, `daily_avg_run`, `revenue`, `penalty`.
 * **5 Velocity / Rate-of-Change Features ($\Delta_{7d}$):**
   First-order temporal differencing measuring degradation velocity:
@@ -196,7 +196,7 @@ The ground-truth target variable `maintenance_priority_score` is computed via a 
 
 $$\text{Priority Hierarchy:}\quad \text{Safety } (0.50) > \text{Revenue } (0.25) > \text{Mileage } (0.15) > \text{Other } (0.10)$$
 
-$$\text{maintenance\_priority\_score} = \text{round}\Big(\text{clip}\big(0.50 \cdot R_{\text{safety}} + 0.25 \cdot R_{\text{revenue}} + 0.15 \cdot R_{\text{mileage}} + 0.10 \cdot R_{\text{other}},\, 0.001,\, 0.999\big),\, 4\Big)$$
+$$\text{Maintenance Priority Score} = \text{round}\Big(\text{clip}\big(0.50 \cdot R_{\text{safety}} + 0.25 \cdot R_{\text{revenue}} + 0.15 \cdot R_{\text{mileage}} + 0.10 \cdot R_{\text{other}},\, 0.001,\, 0.999\big),\, 4\Big)$$
 
 ### Summary Weights Matrix
 

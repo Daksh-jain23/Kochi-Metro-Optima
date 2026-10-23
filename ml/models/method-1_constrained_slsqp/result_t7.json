@@ -1,0 +1,22 @@
+{
+  "ensemble_method": "Method 1: Constrained Convex Optimization (SLSQP)",
+  "horizon": "t+7",
+  "weights": {
+    "HistGradientBoosting": 0.3333,
+    "XGBoost": 0.3333,
+    "LightGBM": 0.3333
+  },
+  "metrics": {
+    "mae": 0.03349,
+    "rmse": 0.04868,
+    "r2": 0.4981,
+    "daily_spearman": 0.7644,
+    "daily_kendall": 0.6128,
+    "mean_rank_error": 3.47,
+    "top1_overlap": 40.74,
+    "top3_overlap": 40.12,
+    "top5_overlap": 52.96,
+    "ndcg3": 90.5,
+    "ndcg5": 91.58
+  }
+}

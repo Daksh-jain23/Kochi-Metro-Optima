@@ -1,0 +1,25 @@
+{
+  "model": "HistGradientBoosting Regressor",
+  "horizon": "t+7",
+  "metrics": {
+    "mae": 0.03337,
+    "rmse": 0.0489,
+    "r2": 0.4936,
+    "daily_spearman": 0.7573,
+    "daily_kendall": 0.6038,
+    "mean_rank_error": 3.54,
+    "top1_overlap": 40.74,
+    "top3_overlap": 39.51,
+    "top5_overlap": 51.85,
+    "ndcg3": 90.42,
+    "ndcg5": 91.09
+  },
+  "hyperparameters": {
+    "learning_rate": 0.1,
+    "max_iter": 150,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 20,
+    "l2_regularization": 1.0,
+    "random_state": 42
+  }
+}

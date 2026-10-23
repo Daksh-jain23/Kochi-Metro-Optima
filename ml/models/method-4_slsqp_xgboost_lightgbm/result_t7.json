@@ -1,0 +1,21 @@
+{
+  "ensemble_method": "Method 4: Constrained Convex Optimization (SLSQP) XGBoost + LightGBM",
+  "horizon": "t+7",
+  "weights": {
+    "XGBoost": 0.5,
+    "LightGBM": 0.5
+  },
+  "metrics": {
+    "mae": 0.03376,
+    "rmse": 0.04883,
+    "r2": 0.4952,
+    "daily_spearman": 0.7662,
+    "daily_kendall": 0.6165,
+    "mean_rank_error": 3.46,
+    "top1_overlap": 40.74,
+    "top3_overlap": 37.04,
+    "top5_overlap": 51.85,
+    "ndcg3": 90.43,
+    "ndcg5": 91.57
+  }
+}

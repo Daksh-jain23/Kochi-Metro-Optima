@@ -1,0 +1,27 @@
+{
+  "model": "LambdaMART Ranker",
+  "horizon": "t+3",
+  "metrics": {
+    "mae": 0.04882,
+    "rmse": 0.06522,
+    "r2": 0.0651,
+    "daily_spearman": 0.7515,
+    "daily_kendall": 0.5918,
+    "mean_rank_error": 3.63,
+    "top1_overlap": 44.83,
+    "top3_overlap": 54.6,
+    "top5_overlap": 63.45,
+    "ndcg3": 92.19,
+    "ndcg5": 93.68
+  },
+  "hyperparameters": {
+    "objective": "lambdarank",
+    "learning_rate": 0.05,
+    "n_estimators": 200,
+    "num_leaves": 31,
+    "min_child_samples": 10,
+    "random_state": 42,
+    "verbose": -1,
+    "n_jobs": -1
+  }
+}

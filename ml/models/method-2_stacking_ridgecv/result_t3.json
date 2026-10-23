@@ -1,0 +1,26 @@
+{
+  "ensemble_method": "Method 2: Regularized Stacking Meta-Learner (RidgeCV)",
+  "horizon": "t+3",
+  "meta_model_details": {
+    "intercept": 0.01824,
+    "alpha": 0.01,
+    "coefficients": {
+      "HistGradientBoosting": 0.6204,
+      "XGBoost": 0.7592,
+      "LightGBM": -0.4408
+    }
+  },
+  "metrics": {
+    "mae": 0.02676,
+    "rmse": 0.04105,
+    "r2": 0.6297,
+    "daily_spearman": 0.8557,
+    "daily_kendall": 0.7144,
+    "mean_rank_error": 2.61,
+    "top1_overlap": 36.21,
+    "top3_overlap": 50.0,
+    "top5_overlap": 65.52,
+    "ndcg3": 91.8,
+    "ndcg5": 93.23
+  }
+}

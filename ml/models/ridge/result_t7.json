@@ -1,0 +1,20 @@
+{
+  "model": "Ridge Regression",
+  "horizon": "t+7",
+  "metrics": {
+    "mae": 0.03667,
+    "rmse": 0.05081,
+    "r2": 0.4533,
+    "daily_spearman": 0.7516,
+    "daily_kendall": 0.5922,
+    "mean_rank_error": 3.66,
+    "top1_overlap": 38.89,
+    "top3_overlap": 35.19,
+    "top5_overlap": 50.74,
+    "ndcg3": 89.04,
+    "ndcg5": 90.3
+  },
+  "hyperparameters": {
+    "alpha": 1000.0
+  }
+}

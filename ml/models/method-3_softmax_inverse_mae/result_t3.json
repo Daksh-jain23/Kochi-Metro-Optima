@@ -1,0 +1,23 @@
+{
+  "ensemble_method": "Method 3: Performance-Weighted Softmax (Inverse-MAE)",
+  "horizon": "t+3",
+  "temperature_tau": 0.000132,
+  "weights": {
+    "HistGradientBoosting": 0.6063,
+    "XGBoost": 0.3877,
+    "LightGBM": 0.0059
+  },
+  "metrics": {
+    "mae": 0.02581,
+    "rmse": 0.04002,
+    "r2": 0.6481,
+    "daily_spearman": 0.8605,
+    "daily_kendall": 0.7201,
+    "mean_rank_error": 2.58,
+    "top1_overlap": 36.21,
+    "top3_overlap": 52.3,
+    "top5_overlap": 65.52,
+    "ndcg3": 92.35,
+    "ndcg5": 93.58
+  }
+}

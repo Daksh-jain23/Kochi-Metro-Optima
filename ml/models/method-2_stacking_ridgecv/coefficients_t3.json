@@ -1,0 +1,9 @@
+{
+  "intercept": 0.01824,
+  "alpha": 0.01,
+  "coefficients": {
+    "HistGradientBoosting": 0.6204,
+    "XGBoost": 0.7592,
+    "LightGBM": -0.4408
+  }
+}

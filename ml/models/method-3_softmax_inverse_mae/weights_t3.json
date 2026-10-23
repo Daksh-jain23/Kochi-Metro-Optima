@@ -1,0 +1,5 @@
+{
+  "HistGradientBoosting": 0.6063,
+  "XGBoost": 0.3877,
+  "LightGBM": 0.0059
+}

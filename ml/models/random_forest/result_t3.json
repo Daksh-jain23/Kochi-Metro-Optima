@@ -1,0 +1,26 @@
+{
+  "model": "Random Forest Regressor",
+  "horizon": "t+3",
+  "metrics": {
+    "mae": 0.02744,
+    "rmse": 0.0412,
+    "r2": 0.627,
+    "daily_spearman": 0.8476,
+    "daily_kendall": 0.7081,
+    "mean_rank_error": 2.65,
+    "top1_overlap": 46.55,
+    "top3_overlap": 58.05,
+    "top5_overlap": 67.24,
+    "ndcg3": 92.64,
+    "ndcg5": 93.83
+  },
+  "hyperparameters": {
+    "n_estimators": 200,
+    "max_depth": 16,
+    "min_samples_split": 2,
+    "min_samples_leaf": 2,
+    "max_features": 0.8,
+    "random_state": 42,
+    "n_jobs": -1
+  }
+}
