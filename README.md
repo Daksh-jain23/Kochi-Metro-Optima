@@ -23,7 +23,7 @@ To eliminate the **dilution anchor effect** (where blending lower-performing mod
 | Horizon | Winning Model | Architecture / Method | Key Metrics on Test Set | Model Artifact |
 | :--- | :--- | :--- | :--- | :--- |
 | **$t+3$** | **Method 4: SLSQP (`XGBoost + LightGBM`)** | Dual-Booster Convex Simplex Optimization ($50\%$ XGB / $50\%$ LGB) | **Spearman $\rho$:** `0.8633`<br>**Kendall $\tau$:** `0.7228`<br>**MAE:** `0.02585`<br>**Mean Rank Error:** `2.55` slots | [`ml/models/method-4_slsqp_xgboost_lightgbm/ensemble_slsqp_xgb_lgbm_t3.joblib`](ml/models/method-4_slsqp_xgboost_lightgbm/ensemble_slsqp_xgb_lgbm_t3.joblib) |
-| **$t+7$** | **XGBoost Regressor** & **Method 4: SLSQP (`XGBoost + LightGBM`)** | Regularized Boosting & Dual-Booster Convex Ensemble | **Spearman $\rho$:** `0.7695` (XGB) / `0.7662` (Ensemble)<br>**Kendall $\tau$:** `0.6169`<br>**MAE:** `0.03343`<br>**Depot #1 Match:** `40.74%` | [`ml/models/xgboost/xgboost_t7.joblib`](ml/models/xgboost/xgboost_t7.joblib)<br>[`ml/models/method-4_slsqp_xgboost_lightgbm/ensemble_slsqp_xgb_lgbm_t7.joblib`](ml/models/method-4_slsqp_xgboost_lightgbm/ensemble_slsqp_xgb_lgbm_t7.joblib) |
+| **$t+7$** | **Method 4: SLSQP (`XGBoost + LightGBM`)** | Regularized Boosting & Dual-Booster Convex Ensemble | **Spearman $\rho$:** `0.7695` (XGB) / `0.7662` (Ensemble)<br>**Kendall $\tau$:** `0.6169`<br>**MAE:** `0.03343`<br>**Depot #1 Match:** `40.74%` | [`ml/models/xgboost/xgboost_t7.joblib`](ml/models/xgboost/xgboost_t7.joblib)<br>[`ml/models/method-4_slsqp_xgboost_lightgbm/ensemble_slsqp_xgb_lgbm_t7.joblib`](ml/models/method-4_slsqp_xgboost_lightgbm/ensemble_slsqp_xgb_lgbm_t7.joblib) |
 
 ---
 
